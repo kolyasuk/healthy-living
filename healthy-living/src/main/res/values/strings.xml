@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="hello_android_text">Hello Android!</string>
+    <string name="randomText">Random</string>
+    <string name="toastText">Toast</string>
+    <string name="countText">Count</string>
+    <string name="random_title">Random number between 0 and %1d</string>
+    <string name="_0">0</string>
+</resources>
