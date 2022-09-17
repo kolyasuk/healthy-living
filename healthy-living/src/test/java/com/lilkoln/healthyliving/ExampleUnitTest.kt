@@ -1,4 +1,4 @@
-package com.lilkoln.myapplication
+package com.lilkoln.healthyliving
 
 import org.junit.Test
 

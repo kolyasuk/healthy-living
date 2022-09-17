@@ -1,4 +1,4 @@
-package com.lilkoln.myapplication
+package com.lilkoln.healthyliving
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
