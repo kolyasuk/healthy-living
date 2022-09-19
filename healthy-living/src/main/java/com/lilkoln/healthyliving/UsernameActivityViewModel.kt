@@ -8,15 +8,14 @@ import com.lilkoln.healthyliving.db.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-class MainActivityViewModel(private val repository: UserRepository) : ViewModel() {
+class UsernameActivityViewModel(private val repository: UserRepository) : ViewModel() {
 
     val _user = MutableLiveData<User>()
     val user: LiveData<User>
         get() = _user
 
-    fun createUser(name: String) {
+    fun createUser(user: User) {
         viewModelScope.launch {
-            val user = User(null, name)
             repository.createUser(user)
         }
     }

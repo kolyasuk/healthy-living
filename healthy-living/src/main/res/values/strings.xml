@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="hello_android_text">Hello Android!</string>
+    <string name="register_text">Enter you name</string>
+    <string name="username_field_hint">Your name</string>
+    <string name="add_name_button_hint">Enter</string>
+    <string name="user_age">Age</string>
+    <string name="user_weight">Weight</string>
+    <string name="user_height">Height</string>
+    <string name="user_calories">Calories</string>
     <string name="randomText">Random</string>
     <string name="toastText">Toast</string>
     <string name="countText">Count</string>
