@@ -1,14 +1,11 @@
-package com.lilkoln.healthyliving
+package com.lilkoln.healthyliving.ui.register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
-import com.lilkoln.healthyliving.db.AppDataBase
+import com.lilkoln.healthyliving.R
 import com.lilkoln.healthyliving.db.User
-import com.lilkoln.healthyliving.db.repository.UserRepository
 import kotlinx.android.synthetic.main.activity_user_info.*
-import kotlinx.android.synthetic.main.activity_username.*
 
 class UserInfoActivity : AppCompatActivity() {
 

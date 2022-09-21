@@ -1,4 +1,4 @@
-package com.lilkoln.healthyliving
+package com.lilkoln.healthyliving.ui.register
 
 import android.app.Application
 import androidx.lifecycle.*
@@ -17,10 +17,11 @@ class UsernameActivityViewModel(private val repository: UserRepository) : ViewMo
     fun createUser(user: User) {
         viewModelScope.launch {
             repository.createUser(user)
+            _user.value = user
         }
     }
 
-    fun loadFirstUser() {
+    fun loadUser() {
         viewModelScope.launch {
             val userByEmail = repository.findUserByEmail()
             _user.value = userByEmail

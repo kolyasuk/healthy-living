@@ -5,31 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_background"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="354dp"
-        android:layout_height="104dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginEnd="40dp"
-        android:background="@color/purple_200"
-        android:fontFamily="cursive"
-        android:text="@string/register_text"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/randomButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/randomText"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="172dp" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".ui.MainActivity"/>

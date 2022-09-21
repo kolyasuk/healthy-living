@@ -15,17 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".CaloriesNumberActivity"
+            android:name=".ui.register.CaloriesNumberActivity"
             android:exported="false" />
         <activity
-            android:name=".UserInfoActivity"
+            android:name=".ui.register.UserInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".UsernameActivity"
+            android:name=".ui.register.UsernameActivity"
             android:exported="false" />
-        <activity android:name=".RandomActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

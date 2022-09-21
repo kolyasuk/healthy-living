@@ -1,4 +1,4 @@
-package com.lilkoln.healthyliving
+package com.lilkoln.healthyliving.ui.register
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

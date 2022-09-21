@@ -20,5 +20,7 @@ data class User (
     @ColumnInfo(name = "weight")
     val weight: Float? = null,
     @ColumnInfo(name = "height")
-    val height: Float? = null
+    val height: Float? = null,
+    @ColumnInfo(name = "calories")
+    var calories: Int? = null
 ) : Serializable
