@@ -1,27 +1,28 @@
-package com.lilkoln.healthyliving.db
+package com.lilkoln.healthyliving.db.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.lilkoln.healthyliving.db.FoodType
 import java.io.Serializable
 
 @Entity(tableName = "food")
 data class Food (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: Int? = null,
+    val id: Int,
     @ColumnInfo(name = "name")
-    val name: String? = null,
+    val name: String,
     @ColumnInfo(name = "description")
     val description: String? = null,
     @ColumnInfo(name = "type")
-    var type: FoodType? = null,
+    var type: FoodType,
     @ColumnInfo(name = "calories")
-    var calories: Int? = null,
+    var calories: Int,
     @ColumnInfo(name = "proteins")
-    var proteins: Int? = null,
+    var proteins: Int,
     @ColumnInfo(name = "period")
-    var period: Int? = null,
+    var period: Int,
     @ColumnInfo(name = "position")
-    var position: Int? = null
+    var position: Int
 ) : Serializable

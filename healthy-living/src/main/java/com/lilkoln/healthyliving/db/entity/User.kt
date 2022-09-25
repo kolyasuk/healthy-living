@@ -1,12 +1,9 @@
-package com.lilkoln.healthyliving.db
+package com.lilkoln.healthyliving.db.entity
 
-import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
-import java.util.*
 
 @Entity(tableName = "user")
 data class User (

@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.lilkoln.healthyliving.R
-import com.lilkoln.healthyliving.db.User
+import com.lilkoln.healthyliving.db.entity.User
 import kotlinx.android.synthetic.main.activity_user_info.*
 
 class UserInfoActivity : AppCompatActivity() {

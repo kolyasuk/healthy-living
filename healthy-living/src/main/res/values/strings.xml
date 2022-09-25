@@ -12,4 +12,11 @@
     <string name="countText">Count</string>
     <string name="random_title">Random number between 0 and %1d</string>
     <string name="_0">0</string>
+    <string name="next_day_menu">Next day</string>
+    <string name="prev_day_menu">Previous day</string>
+    <string name="lunch_meal">Lunch meal</string>
+    <string name="_1st_snack">1st Snack</string>
+    <string name="dinner_meal">Dinner meal</string>
+    <string name="_2nd_snack">2nd Snack</string>
+    <string name="supper_meal">Supper meal</string>
 </resources>

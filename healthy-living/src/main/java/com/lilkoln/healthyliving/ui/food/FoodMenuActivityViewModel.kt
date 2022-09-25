@@ -1,11 +1,14 @@
 package com.lilkoln.healthyliving.ui.food
 
 import androidx.lifecycle.*
-import com.lilkoln.healthyliving.db.Food
+import com.lilkoln.healthyliving.db.dao.NutritionUnitDao
+import com.lilkoln.healthyliving.db.entity.Food
+import com.lilkoln.healthyliving.db.entity.NutritionUnit
 import com.lilkoln.healthyliving.db.repository.FoodRepository
+import com.lilkoln.healthyliving.db.repository.NutritionUnitRepository
 import kotlinx.coroutines.launch
 
-class MainActivityViewModel(private val repository: FoodRepository) : ViewModel() {
+class FoodMenuActivityViewModel(private val foodRepository: FoodRepository) : ViewModel() {
 
     val _food = MutableLiveData<Food>()
     val food: LiveData<Food>
@@ -13,14 +16,14 @@ class MainActivityViewModel(private val repository: FoodRepository) : ViewModel(
 
     fun createFood(food: Food) {
         viewModelScope.launch {
-            repository.createFood(food)
+            foodRepository.createFood(food)
             _food.value = food
         }
     }
 
     fun loadFood() {
         viewModelScope.launch {
-            val food = repository.findAll()
+            val food = foodRepository.findAll()
             _food.value = food[0]
         }
     }

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.lilkoln.healthyliving.ui.MainActivity
 import com.lilkoln.healthyliving.R
 import com.lilkoln.healthyliving.db.AppDataBase
-import com.lilkoln.healthyliving.db.User
+import com.lilkoln.healthyliving.db.entity.User
 import com.lilkoln.healthyliving.db.repository.UserRepository
 import kotlinx.android.synthetic.main.activity_calories_number.*
 
@@ -30,7 +30,7 @@ class CaloriesNumberActivity : AppCompatActivity() {
 
         addUserCalories.setOnClickListener {
             val userCalories = userCalories.text.toString().toInt()
-            val user:User = intent.getSerializableExtra(USER) as User
+            val user: User = intent.getSerializableExtra(USER) as User
             user.calories = userCalories
             viewModel.createUser(user)
 

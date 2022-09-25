@@ -1,9 +1,7 @@
 package com.lilkoln.healthyliving.db.repository
 
-import com.lilkoln.healthyliving.db.Food
-import com.lilkoln.healthyliving.db.User
+import com.lilkoln.healthyliving.db.entity.Food
 import com.lilkoln.healthyliving.db.dao.FoodDao
-import com.lilkoln.healthyliving.db.dao.UserDao
 
 class FoodRepository(private val foodDao: FoodDao) {
 

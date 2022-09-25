@@ -1,6 +1,6 @@
 package com.lilkoln.healthyliving.db.repository
 
-import com.lilkoln.healthyliving.db.User
+import com.lilkoln.healthyliving.db.entity.User
 import com.lilkoln.healthyliving.db.dao.UserDao
 
 class UserRepository(private val userDao: UserDao) {
