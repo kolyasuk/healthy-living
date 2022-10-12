@@ -12,4 +12,8 @@ class UserRepository(private val userDao: UserDao) {
     suspend fun findUserByEmail(): User {
         return userDao.loadFirst()
     }
+
+    suspend fun getUserCalories(): Int {
+        return userDao.getUserCalories()
+    }
 }

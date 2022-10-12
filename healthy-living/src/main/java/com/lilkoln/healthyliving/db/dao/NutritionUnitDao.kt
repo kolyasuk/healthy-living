@@ -13,7 +13,10 @@ interface NutritionUnitDao {
     suspend fun deleteNutritionUnit(NutritionUnit: NutritionUnit)
 
     @Insert
-    suspend fun insertNutritionUnit(NutritionUnit: NutritionUnit)
+    suspend fun insertNutritionUnit(NutritionUnit: NutritionUnit): Long
+
+    @Query("UPDATE nutrition_unit SET checked=:checked where id==:id")
+    suspend fun checkNutritionUnit(id: Int, checked: Boolean)
 
     @Transaction
     @Query("SELECT * FROM nutrition_unit")

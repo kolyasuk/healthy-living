@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
+import java.time.LocalDate
 import java.util.*
 
 @Entity(tableName = "nutrition")
@@ -22,5 +23,5 @@ data class Nutrition (
     @ColumnInfo(name = "supper_id")
     val supperId: Int,
     @ColumnInfo(name = "date")
-    val date: Date,
+    val date: LocalDate,
 ) : Serializable

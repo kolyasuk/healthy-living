@@ -8,8 +8,12 @@ import com.lilkoln.healthyliving.db.entity.NutritionUnitAndFood
 
 class NutritionUnitRepository(private val nutritionUnitDao: NutritionUnitDao) {
 
-    suspend fun createNutritionUnit(food: NutritionUnit) {
-        nutritionUnitDao.insertNutritionUnit(food)
+    suspend fun createNutritionUnit(food: NutritionUnit): Long {
+        return nutritionUnitDao.insertNutritionUnit(food)
+    }
+
+    suspend fun checkNutritionUnit(id: Int, checked: Boolean) {
+        nutritionUnitDao.checkNutritionUnit(id, checked)
     }
 
     suspend fun findAll(): List<NutritionUnit> {

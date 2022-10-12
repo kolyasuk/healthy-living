@@ -14,6 +14,9 @@ interface UserDao {
     @Query("SELECT * FROM User order by id asc limit 1")
     suspend fun loadFirst(): User
 
+    @Query("SELECT calories FROM User order by id asc limit 1")
+    suspend fun getUserCalories(): Int
+
     @Delete
     suspend fun deleteUser(user: User)
 

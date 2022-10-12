@@ -3,7 +3,7 @@ package com.lilkoln.healthyliving.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.lilkoln.healthyliving.db.FoodType
+import com.lilkoln.healthyliving.db.enums.FoodType
 import java.io.Serializable
 
 @Entity(tableName = "food")

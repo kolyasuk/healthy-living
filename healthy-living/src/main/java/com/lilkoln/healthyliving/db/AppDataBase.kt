@@ -16,9 +16,7 @@ import com.lilkoln.healthyliving.util.Converters
 
 @Database(entities = [User::class, Food::class, NutritionUnit::class, Nutrition::class], version = 2, exportSchema = true,
     autoMigrations = [
-        AutoMigration (from = 1, to = 2)/*,
-        AutoMigration (from = 2, to = 3),
-        AutoMigration (from = 3, to = 4)*/]
+        AutoMigration (from = 1, to = 2)]
 )
 @TypeConverters(Converters::class)
 abstract class AppDataBase : RoomDatabase() {
@@ -35,7 +33,7 @@ abstract class AppDataBase : RoomDatabase() {
                 database.execSQL("INSERT INTO food (ID, name, description, type, calories, proteins, period, position) " +
                         "VALUES (null, 'Протеїн', '', 'SNACK', 120, 24, 1, 4)")
                 database.execSQL("INSERT INTO food (ID, name, description, type, calories, proteins, period, position) " +
-                        "VALUES (null, 'Яйце варене', '', 'ANY', 152, 13, 3, 0)")
+                        "VALUES (null, 'Яйце варене', '', 'LUNCH', 152, 13, 3, 0)")
                 database.execSQL("INSERT INTO food (ID, name, description, type, calories, proteins, period, position) " +
                         "VALUES (null, 'Гречка з курячою вареною грудинкою', '', 'DINNER', 151, 29, 3, 0)")
                 database.execSQL("INSERT INTO food (ID, name, description, type, calories, proteins, period, position) " +
@@ -64,8 +62,7 @@ abstract class AppDataBase : RoomDatabase() {
                     AppDataBase::class.java,
                     "healthy_living_db"
                 )
-                    .addMigrations(MIGRATION_1_2/*, MIGRATION_2_3, MIGRATION_3_4*/)
-//                    .fallbackToDestructiveMigration()
+                    .addMigrations(MIGRATION_1_2)
                     .build()
             }
             return INSTANCE
