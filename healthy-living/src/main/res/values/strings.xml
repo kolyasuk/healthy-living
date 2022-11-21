@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Healthy living</string>
     <string name="register_text">Enter you name</string>
     <string name="username_field_hint">Your name</string>
     <string name="add_name_button_hint">Enter</string>
@@ -19,5 +19,7 @@
     <string name="dinner_meal">Dinner meal</string>
     <string name="_2nd_snack">2nd Snack</string>
     <string name="supper_meal">Supper meal</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>
