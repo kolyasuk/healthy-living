@@ -4,12 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.lilkoln.healthyliving.ui.MainActivity
 import com.lilkoln.healthyliving.R
 import com.lilkoln.healthyliving.db.AppDataBase
 import com.lilkoln.healthyliving.db.entity.User
 import com.lilkoln.healthyliving.db.repository.UserRepository
 import kotlinx.android.synthetic.main.activity_calories_number.*
+import kotlinx.coroutines.launch
 
 class CaloriesNumberActivity : AppCompatActivity() {
 
@@ -34,14 +36,14 @@ class CaloriesNumberActivity : AppCompatActivity() {
             user.calories = userCalories
             viewModel.createUser(user)
 
-            viewModel.user.observe(this) { createUser ->
-                if(createUser != null)
-                    setMainActivityy()
+            viewModel.user.observe(this) { createdUser ->
+                if(createdUser != null)
+                    setMainActivity()
             }
         }
     }
 
-    private fun setMainActivityy() {
+    private fun setMainActivity() {
         val mainActivity = Intent(this, MainActivity::class.java)
         startActivity(mainActivity)
     }

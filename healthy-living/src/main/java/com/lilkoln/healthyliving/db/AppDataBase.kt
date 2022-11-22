@@ -62,6 +62,7 @@ abstract class AppDataBase : RoomDatabase() {
                     AppDataBase::class.java,
                     "healthy_living_db"
                 )
+                    .createFromAsset("healthy_living_db.db")
                     .addMigrations(MIGRATION_1_2)
                     .build()
             }
