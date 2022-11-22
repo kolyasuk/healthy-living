@@ -27,33 +27,18 @@ import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var db: AppDataBase
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var mainViewModel: MainActivityViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         db = AppDataBase.getUserDataBase(this)!!
 
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val nawView : NavigationView = findViewById(R.id.nav_view)
-
-        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        nawView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.nav_home -> Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
-                R.id.nav_parameters -> Toast.makeText(this, "My parameters", Toast.LENGTH_SHORT).show()
-                R.id.nav_add_meal -> Toast.makeText(this, "Add meal", Toast.LENGTH_SHORT).show()
-            }
-
-            true
-        }
-
+        menu()
         loadNutrition(db)
 
         lunchView.setOnClickListener {
@@ -76,6 +61,27 @@ class MainActivity : AppCompatActivity() {
             checkNutrition(supperView, !supperView.paint.isStrikeThruText)
         }
 
+    }
+
+    private fun menu() {
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+        val nawView: NavigationView = findViewById(R.id.nav_view)
+
+        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        nawView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav_home -> Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                R.id.nav_parameters -> Toast.makeText(this, "My parameters", Toast.LENGTH_SHORT)
+                    .show()
+                R.id.nav_add_meal -> Toast.makeText(this, "Add meal", Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -112,7 +118,7 @@ class MainActivity : AppCompatActivity() {
                 nutritionUnitRepository,
                 nutritionRepository
             )
-        ).get(MainActivityViewModel::class.java)
+        )[MainActivityViewModel::class.java]
 
         mainViewModel.loadNutrition()
         mainViewModel.nutritionModel.observe(this) { nutritionModel ->
