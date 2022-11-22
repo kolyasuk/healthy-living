@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch{
             val user = userRepository.getUser()
             headerUserName.text = user.firstName
-            headerUserAge.text = user.age.toString() + "years"
+            headerUserAge.text = user.age.toString() + " years"
         }
 
     }
